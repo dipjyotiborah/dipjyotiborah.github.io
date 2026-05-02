@@ -1,145 +1,447 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dipjyoti Borah's Professional Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            overflow: hidden;
-        }
-        header {
-            background: #333;
-            color: #fff;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #0779e4 3px solid;
-        }
-        header a {
-            color: #fff;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 16px;
-        }
-        header ul {
-            padding: 0;
-            list-style: none;
-        }
-        header li {
-            float: right;
-            display: inline;
-            padding: 0 20px 0 20px;
-        }
-        .profile {
-            padding: 20px;
-            background: #fff;
-            margin-top: 20px;
-        }
-        .profile h2 {
-            color: #0779e4;
-        }
-        .skills, .experience, .education {
-            padding: 20px;
-            background: #fff;
-            margin-top: 20px;
-        }
-        footer {
-            padding: 20px;
-            background: #333;
-            color: #fff;
-            text-align: center;
-            margin-top: 20px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dipjyoti Borah | Premium Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'Inter',sans-serif;
+      background:linear-gradient(135deg,#020617,#0f172a,#000);
+      color:#fff;
+      line-height:1.6
+    }
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    .container{width:90%;max-width:1400px;margin:auto}
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(0,0,0,.4);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(255,255,255,.08)
+    }
+
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 0
+    }
+
+    nav h1{
+      font-size:2rem;
+      font-weight:800
+    }
+
+    nav ul{
+      display:flex;
+      gap:30px;
+      list-style:none
+    }
+
+    nav ul li a{
+      color:#cbd5e1;
+      transition:.3s
+    }
+
+    nav ul li a:hover{
+      color:#22d3ee
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:60px;
+      align-items:center;
+      padding:100px 0
+    }
+
+    .hero-tag{
+      text-transform:uppercase;
+      letter-spacing:4px;
+      color:#22d3ee;
+      font-size:.9rem;
+      margin-bottom:20px
+    }
+
+    .hero h2{
+      font-size:clamp(3rem,8vw,6rem);
+      line-height:1.1;
+      font-weight:800
+    }
+
+    .hero h2 span{
+      color:#22d3ee
+    }
+
+    .hero p{
+      margin-top:20px;
+      color:#cbd5e1;
+      font-size:1.2rem
+    }
+
+    .buttons{
+      margin-top:35px;
+      display:flex;
+      gap:15px;
+      flex-wrap:wrap
+    }
+
+    .btn{
+      padding:14px 28px;
+      border-radius:18px;
+      font-weight:700;
+      display:inline-block;
+      transition:.3s
+    }
+
+    .btn-primary{
+      background:#22d3ee;
+      color:#000
+    }
+
+    .btn-primary:hover{
+      transform:scale(1.05)
+    }
+
+    .btn-secondary{
+      border:1px solid #22d3ee;
+      color:#fff
+    }
+
+    .hero-right{
+      display:flex;
+      flex-direction:column;
+      align-items:center
+    }
+
+    .portrait-wrap{
+      position:relative;
+      margin-bottom:30px
+    }
+
+    .portrait-glow{
+      position:absolute;
+      inset:0;
+      background:rgba(34,211,238,.2);
+      filter:blur(50px);
+      border-radius:30px
+    }
+
+    .portrait{
+      position:relative;
+      width:320px;
+      height:320px;
+      object-fit:cover;
+      border-radius:24px;
+      border:4px solid rgba(255,255,255,.1);
+      box-shadow:0 20px 50px rgba(0,0,0,.5)
+    }
+
+    .stat-cards{
+      display:grid;
+      gap:15px;
+      width:100%;
+      max-width:420px
+    }
+
+    .stat-cards div,
+    .stats-grid div,
+    .project-card,
+    .cert-box,
+    .cta-box{
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:24px
+    }
+
+    .stat-cards div{
+      padding:20px
+    }
+
+    .stats-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:20px;
+      padding:40px 0
+    }
+
+    .stats-grid div{
+      text-align:center;
+      padding:30px
+    }
+
+    .stats-grid h3{
+      font-size:2.5rem;
+      color:#22d3ee
+    }
+
+    section{
+      padding:80px 0
+    }
+
+    .section-title{
+      font-size:3rem;
+      margin-bottom:10px
+    }
+
+    .section-sub{
+      color:#94a3b8;
+      margin-bottom:40px
+    }
+
+    .projects-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:30px
+    }
+
+    .project-card{
+      padding:25px;
+      transition:.3s
+    }
+
+    .project-card:hover{
+      transform:translateY(-10px);
+      border-color:rgba(34,211,238,.4)
+    }
+
+    .project-header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:20px
+    }
+
+    .project-header img{
+      width:56px;
+      height:56px;
+      border-radius:18px;
+      object-fit:cover
+    }
+
+    .project-number{
+      color:#22d3ee;
+      font-weight:700
+    }
+
+    .project-category{
+      font-size:.75rem;
+      text-transform:uppercase;
+      color:#94a3b8
+    }
+
+    .project-card h3{
+      font-size:1.5rem;
+      margin-bottom:8px
+    }
+
+    .project-card h4{
+      color:#67e8f9;
+      margin-bottom:12px
+    }
+
+    .project-card p{
+      color:#cbd5e1
+    }
+
+    .tech-stack{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin:18px 0
+    }
+
+    .tech-stack span{
+      background:rgba(255,255,255,.08);
+      padding:6px 12px;
+      border-radius:999px;
+      font-size:.75rem
+    }
+
+    .project-link{
+      color:#22d3ee;
+      font-weight:700
+    }
+
+    .two-col{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:50px
+    }
+
+    .cert-box{
+      padding:20px;
+      margin-bottom:15px
+    }
+
+    .cta-box{
+      text-align:center;
+      padding:60px;
+      background:rgba(34,211,238,.08);
+      border-color:rgba(34,211,238,.2)
+    }
+
+    .cta-box p{
+      color:#cbd5e1;
+      margin:20px 0
+    }
+
+    footer{
+      border-top:1px solid rgba(255,255,255,.08);
+      padding:30px 0;
+      text-align:center;
+      color:#94a3b8
+    }
+
+    @media(max-width:768px){
+      nav ul{display:none}
+      .section-title{font-size:2.2rem}
+      .portrait{
+        width:260px;
+        height:260px
+      }
+    }
+  </style>
 </head>
 <body>
 
 <header>
-    <div class="container">
-        <div id="branding">
-            <h1>Dipjyoti Borah</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#profile">Profile</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
+  <div class="container">
+    <nav>
+      <h1>Dipjyoti Borah</h1>
+      <ul>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#brand">Brand</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>
 
-<section id="profile" class="profile container">
-    <h2>Profile Summary</h2>
-    <p>An accommodating and versatile individual with the skill to develop inspiring hands-on lessons that will capture everyone’s imagination and breed success. An enthusiastic, committed educator with an innate ability to understand and motivate the learner. A self-starter with high energy enabling maximum and efficient work under pressure.</p>
+<section class="container hero">
+  <div>
+    <p class="hero-tag">Digital Educator • Developer • AI Trainer • Entrepreneur</p>
+    <h2>Building Local Innovation with <span>Global Impact</span></h2>
+    <p>From Majuli, Assam to international digital ecosystems — I design educational platforms, AI systems, business websites, and transformative technology experiences.</p>
+    <div class="buttons">
+      <a href="#projects" class="btn btn-primary">Explore My Work</a>
+      <a href="#" class="btn btn-secondary">Download Portfolio</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="portrait-wrap">
+      <div class="portrait-glow"></div>
+      <!-- Replace placeholder with your image -->
+      <img src="hero.png" alt="Dipjyoti Borah" class="portrait">
+    </div>
+
+    <div class="stat-cards">
+      <div>IT Faculty at NIELIT Majuli since 2022</div>
+      <div>AI & IoT Trainer across schools and colleges</div>
+      <div>Full Stack Developer & Entrepreneur</div>
+      <div>International Web Portfolio Projects</div>
+    </div>
+  </div>
 </section>
 
-<section id="skills" class="skills container">
-    <h2>Technical Skills</h2>
-    <ul>
-        <li>Programming: C, C++, Python, React</li>
-        <li>Scripting Tools: PHP, SQL, JS</li>
-        <li>Networking: TCP/IP, Routing & Switching Protocols, Packet Tracer</li>
-        <li>Design Software: Adobe Photoshop, Illustrator, After Effect</li>
-        <li>Web Development: HTML5, CSS, JavaScript, Framework(s)</li>
-        <li>Database Administration: MySQL, SQLite</li>
-        <li>Operating Systems: Windows, Linux</li>
-        <li>Other Applications: Microsoft Office, Tally, Cloud Computing(SAAS), CMS</li>
-    </ul>
+<section class="container">
+  <div class="stats-grid">
+    <div><h3>8+</h3><p>Premium Projects</p></div>
+    <div><h3>4+</h3><p>Professional Certifications</p></div>
+    <div><h3>100+</h3><p>Students & Trainings</p></div>
+    <div><h3>Global</h3><p>Client Reach</p></div>
+  </div>
 </section>
 
-<section id="experience" class="experience container">
-    <h2>Professional Experience</h2>
-    <p>3 Years + of Teaching Experience & 1 Year + of V.A. Experience</p>
-    <ul>
-        <li><strong>Faculty (IT) – NIELIT, MEITY, GOVT. OF INDIA, MAJULI STUDY CENTRE</strong><br>
-            February 2022 to Present</li>
-        <li><strong>Faculty & Instructor - AMTRON, Garamur, Majuli</strong><br>
-            January 2021 to December 2021</li>
-        <li><strong>Virtual Assistant/Developer - MDSOnline, Christian Basti, Ghy - 5</strong><br>
-            February 2020 to October 2021</li>
-    </ul>
+<section id="projects" class="container">
+  <h2 class="section-title">Featured Projects & Global Web Portfolio</h2>
+  <p class="section-sub">A curated showcase of innovation, educational systems, AI ecosystems, and international-grade web platforms.</p>
+
+  <div class="projects-grid" id="projectsGrid"></div>
 </section>
 
-<section id="education" class="education container">
-    <h2>Education</h2>
-    <ul>
-        <li><strong>Master of Computer Application (MCA)</strong><br>
-            Dibrugarh University, Dibrugarh | CGPA - 6.8 | Year 2020</li>
-        <li><strong>Bachelor of Computer Application (BCA)</strong><br>
-            Jagannath Barooah College, Jorhat | Percentage - 62.28 | Year 2015</li>
-        <li><strong>HS (Science)</strong><br>
-            Concept Jr. College, Titabar | Percentage - 59 | Year 2012</li>
-        <li><strong>HSLC</strong><br>
-            KRB High School, Majuli | Percentage - 60 | Year 2010</li>
-    </ul>
-    <h3>Internship</h3>
-    <p>Centre for Biotechnology and Bioinformatics, Dibrugarh University - 2019<br>
-    A project under ICMR related to Phytochemical Database Using Core PHP & MySql. Access the project from IMPDB.ORG.IN - Guide. Dr. Subrata Singha</p>
+<section id="certifications" class="container">
+  <div class="two-col">
+    <div>
+      <h2 class="section-title">Certifications & Continuous Learning</h2>
+      <div class="cert-box">Google Cloud Training</div>
+      <div class="cert-box">AI For Everyone – Andrew Ng (Coursera)</div>
+      <div class="cert-box">FutureLearn Professional Courses</div>
+      <div class="cert-box">NIELIT Training & Development Programs</div>
+    </div>
+
+    <div id="brand">
+      <h2 class="section-title">Brand Statement</h2>
+      <p>I don’t just build websites or teach technology — I create ecosystems. My work spans AI literacy, educational transformation, secure systems, entrepreneurship, and digital branding.</p>
+      <br>
+      <p style="color:#94a3b8;">My mission is to prove that innovation can emerge from anywhere — even from Majuli — when skill, technology, and relentless ambition align.</p>
+    </div>
+  </div>
 </section>
 
-<section id="contact" class="container">
-    <h2>Contact Information</h2>
-    <p><strong>Address:</strong> Garamur, Majuli - 785104</p>
-    <p><strong>Phone:</strong> 70021 95852, 84729 79399</p>
-    <p><strong>Email:</strong> mymajuli@gmail.com</p>
-    <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/dipjyoti-borah" target="_blank">linkedin.com/in/dipjyoti-borah</a></p>
+<section class="container">
+  <div class="cta-box">
+    <h2 class="section-title">Let’s Build Something Impactful</h2>
+    <p>Whether it’s AI systems, educational ecosystems, business platforms, or premium digital branding — I build for purpose, scale, and transformation.</p>
+    <a href="#" class="btn btn-primary">Connect With Me</a>
+  </div>
 </section>
 
 <footer>
-    <p>Dipjyoti Borah | © 2024 All Rights Reserved</p>
+  <div class="container">
+    <p>© 2026 Dipjyoti Borah | IT Faculty • Full Stack Developer • AI Trainer • Entrepreneur</p>
+  </div>
 </footer>
+
+<script>
+  const projects = [
+    ["IMPDB – Indian Medicinal Phytochemical Database","Research & Innovation","Curated for Drug Designing | impdb.org.in","A biotechnology-focused database project developed under ICMR internship at Dibrugarh University.",["Core PHP","MySQL","Database Architecture"],"https://impdb.org.in",1],
+    ["Passkey Based Online Examination System","EdTech Security","Secure Digital Assessment Platform","An innovative exam system using secure passkey authentication for online assessments.",["PHP","JavaScript","MySQL"],"#",2],
+    ["AI ChatBot System","Artificial Intelligence","Next-Gen Conversational Assistant","A custom AI-powered chatbot ecosystem focused on education and automation.",["PHP","AI APIs","Automation"],"#",3],
+    ["We’ve Got Land","Global Client Project","Land Investment & Property Platform","A professional real estate and land investment platform.",["Real Estate UX","Branding"],"https://www.wevegotland.com/",4],
+    ["The Goldhill Group","Global Client Project","Business Advisory & Leadership Platform","A strategic consulting website for leadership and advisory excellence.",["Corporate Design","Professional Web"],"https://www.thegoldhillgroup.com/",5],
+    ["HoistCam","Global Client Project","Industrial Camera Solutions Website","A business-grade industrial website centered on safety technology.",["Industrial Tech","Enterprise Web"],"https://www.hoistcam.com/",6],
+    ["SMH Costa del Sol","Global Client Project","Luxury Real Estate Property Platform","A premium luxury property showcase.",["Luxury UI","Property Showcase"],"https://www.smhcostadelsol.com/",7],
+    ["JobAlert.ie","Global Client Project","Regional Job Portal by County","A geographically structured employment portal.",["Directory Platform","Search UX"],"https://www.jobalert.ie/jobs-by-county",8]
+  ];
+
+  const grid = document.getElementById("projectsGrid");
+
+  projects.forEach((p, i) => {
+    const card = document.createElement("div");
+    card.className = "project-card";
+
+    card.innerHTML = `
+      <div class="project-header">
+        <div>
+          <div class="project-number">0${i + 1}</div>
+          <div class="project-category">${p[1]}</div>
+        </div>
+        <img src="https://picsum.photos/100?random=${p[6]}" alt="${p[0]}">
+      </div>
+
+      <h3>${p[0]}</h3>
+      <h4>${p[2]}</h4>
+      <p>${p[3]}</p>
+
+      <div class="tech-stack">
+        ${p[4].map(tech => `<span>${tech}</span>`).join("")}
+      </div>
+
+      <a href="${p[5]}" target="_blank" class="project-link">View Project →</a>
+    `;
+
+    grid.appendChild(card);
+  });
+</script>
 
 </body>
 </html>
